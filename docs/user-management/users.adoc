@@ -12,7 +12,7 @@ Beside local _Users_, external link:https://wiki.opennms.org/wiki/Spring_Securit
 The following paragraphs describe how to manage the embedded _User_ and _Security Roles_ in _{product-title}_.
 
 [[ga-role-user-management-users]]
-=== Users
+== Users
 
 Managing _Users_ is done through the _Web User Interface_ and requires to login as a _User_ with administrative permissions.
 By default the _admin_ user is used to initially create and modify _Users_.

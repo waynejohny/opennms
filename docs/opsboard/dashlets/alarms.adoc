@@ -1,6 +1,4 @@
 
-===== Alarms
-
 This _Alarms Dashlet_ shows a table with a short alarm description.
 
 .Information of the alarm

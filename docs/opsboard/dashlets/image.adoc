@@ -1,6 +1,4 @@
 
-===== Image
-
 This _Dashlet_ displays an image by a given URL.
 
 [options="autowidth"]

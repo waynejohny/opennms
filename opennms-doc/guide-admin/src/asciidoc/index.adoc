@@ -19,40 +19,9 @@
 == Data Choices
 include::text/datachoices.adoc[]
 
-[[ga-role-user-management]]
-== User Management
-include::text/user-management/users.adoc[]
-include::text/user-management/security-roles.adoc[]
-
 [[ga-admin-ui]]
 == Administrative Webinterface
 
-[[ga-admin-ui-start-page]]
-=== Grafana Dashboard Box
-include::text/webui/grafana-dashboard-box.adoc[]
-
-[[ga-admin-ui-ops-board]]
-=== Operator Board
-include::text/webui/opsboard/introduction.adoc[]
-
-// Dashlets
-include::text/webui/opsboard/dashlet/alarm-detail.adoc[]
-include::text/webui/opsboard/dashlet/alarms.adoc[]
-include::text/webui/opsboard/dashlet/charts.adoc[]
-include::text/webui/opsboard/dashlet/grafana.adoc[]
-include::text/webui/opsboard/dashlet/image.adoc[]
-include::text/webui/opsboard/dashlet/ksc.adoc[]
-include::text/webui/opsboard/dashlet/map.adoc[]
-include::text/webui/opsboard/dashlet/rrd.adoc[]
-include::text/webui/opsboard/dashlet/rtc.adoc[]
-include::text/webui/opsboard/dashlet/summary.adoc[]
-include::text/webui/opsboard/dashlet/surveillance.adoc[]
-include::text/webui/opsboard/dashlet/topology.adoc[]
-include::text/webui/opsboard/dashlet/url.adoc[]
-
-// Generic components
-include::text/webui/opsboard/boosting-behavior.adoc[]
-include::text/webui/opsboard/criteria-builder.adoc[]
 
 [[ga-admin-ui-jmx-config-generator]]
 === JMX Configuration Generator

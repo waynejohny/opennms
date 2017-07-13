@@ -1,0 +1,11 @@
+---
+horizon:
+  name: Horizon
+  author: OpenNMS Documentation Team <opennms-docs@lists.opennms.org>
+  site: opennms
+  site_name: OpenNMS
+  site_url: https://docs.opennms.org
+  branches:
+    jira/NMS-9508:
+      name: 'jira/NMS-9508'
+      dir: 'jira/NMS-9508'

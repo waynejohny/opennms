@@ -1,6 +1,4 @@
 
-===== RTC
-
 This _Dashlet_ shows the configured SLA categories from the {product-title} start page.
 
 [options="autowidth"]
@@ -8,5 +6,3 @@ This _Dashlet_ shows the configured SLA categories from the {product-title} star
 | Boost support     | false
 | `-`               | -
 |===
-
-
