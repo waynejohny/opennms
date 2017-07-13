@@ -89,3 +89,134 @@ Topics:
     File: webui
   - Name: Command Line Interface
     File: cli
+---
+Name: Heatmap
+Dir: heatmap
+Topics:
+    - Name: Introduction
+      File: introduction
+---
+Name: Trendline Visualization
+Dir: trend
+Topics:
+    - Name: Introduction
+      File: introduction
+---
+Name: Service Assurance
+Dir: service-assurance
+Topics:
+    - Name: Introduction
+      File: introduction
+    - Name: Pollerd Configuration
+      File: pollerd-configuration
+    - Name: Critical Service
+      File: critical-service
+    - Name: Downtime Model
+      File: downtime-model
+    - Name: Path Outages
+      File: path-outages
+    - Name: Polling Packages
+      File: polling-packages
+    - Name: Monitors
+      Dir: monitors
+      Topics:
+        - Name: Introduction
+          File: introduction
+        - Name: Availability Monitor
+          File: AvailabilityMonitor
+        - Name: BgpSessionMonitor
+          File: BgpSessionMonitor
+        - Name: BSFMonitor
+          File: BSFMonitor
+        - Name: CiscoIpSlaMonitor
+          File: CiscoIpSlaMonitor
+        - Name: CiscoPingMibMonitor
+          File: CiscoPingMibMonitor
+        - Name: CitrixMonitor
+          File: CitrixMonitor
+        - Name: DhcpMonitor
+          File: DhcpMonitor
+        - Name: DiskUsageMonitor
+          File: DiskUsageMonitor
+        - Name: DnsMonitor
+          File: DnsMonitor
+        - Name: DNSResolutionMonitor
+          File: DNSResolutionMonitor
+        - Name: FtpMonitor
+          File: FtpMonitor
+        - Name: HostResourceSwRunMonitor
+          File: HostResourceSwRunMonitor
+        - Name: HttpMonitor
+          File: HttpMonitor
+        - Name: HttpPostMonitor
+          File: HttpPostMonitor
+        - Name: HttpsMonitor
+          File: HttpsMonitor
+        - Name: IcmpMonitor
+          File: IcmpMonitor
+        - Name: ImapMonitor
+          File: ImapMonitor
+        - Name: ImapsMonitor
+          File: ImapsMonitor
+        - Name: JCifsMonitor
+          File: JCifsMonitor
+        - Name: JDBCMonitor
+          File: JDBCMonitor
+        - Name: JDBCStoredProcedureMonitor
+          File: JDBCStoredProcedureMonitor
+        - Name: JDBCQueryMonitor
+          File: JDBCQueryMonitor
+        - Name: JmxMonitor
+          File: JmxMonitor
+        - Name: JolokiaBeanMonitor
+          File: JolokiaBeanMonitor
+        - Name: LdapMonitor
+          File: LdapMonitor
+        - Name: LdapsMonitor
+          File: LdapsMonitor
+        - Name: MemcachedMonitor
+          File: MemcachedMonitor
+        - Name: NetScalerGroupHealthMonitor
+          File: NetScalerGroupHealthMonitor
+        - Name: NrpeMonitor
+          File: NrpeMonitor
+        - Name: NtpMonitor
+          File: NtpMonitor
+        - Name: OmsaStorageMonitor
+          File: OmsaStorageMonitor
+        - Name: OpenManageChassisMonitor
+          File: OpenManageChassisMonitor
+        - Name: PageSequenceMonitor
+          File: PageSequenceMonitor
+        - Name: PercMonitor
+          File: PercMonitor
+        - Name: Pop3Monitor
+          File: Pop3Monitor
+        - Name: PrTableMonitor
+          File: PrTableMonitor
+        - Name: RadiusAuthMonitor
+          File: RadiusAuthMonitor
+        - Name: SmbMonitor
+          File: SmbMonitor
+        - Name: SnmpMonitor
+          File: SnmpMonitor
+        - Name: SshMonitor
+          File: SshMonitor
+        - Name: SSLCertMonitor
+          File: SSLCertMonitor
+        - Name: StrafePingMonitor
+          File: StrafePingMonitor
+        - Name: TcpMonitor
+          File: TcpMonitor
+        - Name: SystemExecuteMonitor
+          File: SystemExecuteMonitor
+        - Name: VmwareCimMonitor
+          File: VmwareCimMonitor
+        - Name: VmwareMonitor
+          File: VmwareMonitor
+        - Name: Win32ServiceMonitor
+          File: Win32ServiceMonitor
+        - Name: WsManMonitor
+          File: WsManMonitor
+        - Name: XmpMonitor
+          File: XmpMonitor
