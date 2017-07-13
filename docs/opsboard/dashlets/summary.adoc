@@ -1,6 +1,4 @@
 
-===== Summary
-
 This _Dashlet_ shows a trend of incoming alarms in given time frame.
 
 [options="autowidth"]
