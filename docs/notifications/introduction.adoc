@@ -1,11 +1,11 @@
 
 // Allow GitHub image rendering
-:imagesdir: ./images
+:imagesdir: ../../images
 
 [[ga-notifications-introduction]]
 === Introduction
 
-_{product-title}_ uses notifications to make users aware of an event.
+_{opennms-product-name}_ uses notifications to make users aware of an event.
 Common notification methods are email and paging, but notification mechanisms also exist for:
 
 * Arbitrary HTTP GET and POST operations
@@ -18,4 +18,4 @@ Common notification methods are email and paging, but notification mechanisms al
 * User-provided scripts in any JSR-223 compatible language
 * XMPP
 
-The notification daemon _Notifd_ creates and sends notifications according to configured rules when selected events occur in _{product-title}_.
+The notification daemon _Notifd_ creates and sends notifications according to configured rules when selected events occur in _{opennms-product-name}_.

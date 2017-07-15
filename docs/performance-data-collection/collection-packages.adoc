@@ -2,8 +2,7 @@
 // Allow GitHub image rendering
 :imagesdir: ./images
 
-[[ga-collectd-packages]]
-=== Collection Packages
+== Collection Packages
 
 To define more complex collection configuration it is possible to group _Service_ configurations which provide performance metrics into _Collection Packages_.
 They allow to assign to _Nodes_ different _Service Configurations_ to differentiate collection of performance metrics and connection settings.
@@ -30,7 +29,7 @@ A more specific _Collection Package_ can be used to overwrite the default settin
 <4> Evaluate _IPv6 rule_ to collect for all _IPv6 interfaces_ in the given range
 
 [[ga-collectd-packages-services]]
-==== Service Configurations
+=== Service Configurations
 
 _Service Configurations_ define what _Collector_ to use and which performance metrics needs to be collected.
 _Service Configurations_ contains common _Service Attributes_ as well as _Collector_ specific parameters.
