@@ -1,9 +1,6 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
 [[ga-enlinkd-layer-2-link-discovery]]
-=== Layer 2 Link Discovery
+== Layer 2 Link Discovery
 
 _Enlinkd_ is able to discover _Layer 2_ network links based on the following protocols:
 

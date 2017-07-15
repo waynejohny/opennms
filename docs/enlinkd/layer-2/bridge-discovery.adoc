@@ -2,7 +2,7 @@
 // Allow GitHub image rendering
 :imagesdir: ./images
 
-==== Transparent Bridge Discovery
+== Transparent Bridge Discovery
 
 Discovering _Layer 2_ network links using the _Bridge Forwarding_ table requires a special algorithm.
 To discover _Links_ an algorithm based on a scientific paper with the title link:http://cs-pub.bu.edu/groups/nrg/readinglist/lowekamp-sigcomm01.pdf[Topology Discovery for Large Ethernet Networks] is implemented.

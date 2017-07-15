@@ -391,3 +391,29 @@ Dir: database-reports
 Topics:
   - Name: Database
     File: database
+---
+Name: Enhanced Linkd
+Dir: enlinkd
+Topics:
+  - Name: Introduction
+    File: introduction
+  - Name: Layer 2
+    Dir: layer-2
+    Topics:
+      - Name: Introduction
+        File: introduction
+      - Name: LLDP Link Discovery
+        File: lldp-discovery
+      - Name: CDP Link Discovery
+        File: cdp-discovery
+      - Name: Bridge MIB Link Discovery
+        File: bridge-discovery
+  - Name: Layer 3
+    Dir: layer-3
+    Topics:
+      - Name: Introduction
+        File: introduction
+      - Name: OSPF Link Discovery
+        File: ospf-discovery
+      - Name: IS-IS Link Discovery
+        File: is-is-discovery
