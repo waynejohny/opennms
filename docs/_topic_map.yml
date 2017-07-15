@@ -379,3 +379,9 @@ Dir: topology-map
 Topics:
   - Name: Topology
     File: topology
+---
+Name: Asset Topology Provider
+Dir: asset-topology
+Topics:
+    - Name: GraphML
+      File: graphml
