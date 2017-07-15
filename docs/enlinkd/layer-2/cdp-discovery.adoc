@@ -2,7 +2,7 @@
 // Allow GitHub image rendering
 :imagesdir: ./images
 
-==== CDP Discovery
+== CDP Discovery
 
 The _Cisco Discovery Protocol (CDP)_ is a proprietary link layer protocol from _Cisco_.
 It is used by network devices to advertise identity, capabilities and neighbors.

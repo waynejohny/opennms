@@ -2,7 +2,7 @@
 // Allow GitHub image rendering
 :imagesdir: ./images
 
-==== OSPF Discovery
+== OSPF Discovery
 
 The relevant MIBs for OSPF topology are _OSPF-MIB_ and _OSPF-TRAP-MIB_.
 In these MIBs are defined the relevant objects used to find OSPF links, specifically:

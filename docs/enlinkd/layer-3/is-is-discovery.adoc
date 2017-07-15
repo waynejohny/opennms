@@ -2,7 +2,7 @@
 // Allow GitHub image rendering
 :imagesdir: ./images
 
-==== IS-IS Discovery
+== IS-IS Discovery
 
 _IS-IS Links_ are found in the _isisISAdjTable_ that is defined in _ISIS-MIB_ (mib-rfc4444.txt).
 In this table is found the information needed to find the Adjacency Intermediate System.
