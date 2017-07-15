@@ -58,11 +58,11 @@ layers which are not directly and completely referenced by _{opennms-product-nam
 
 Example screenshots of a topology containing regions, buildings, racks and nodes are shown below
 
-image::asset-topology/AssetScreen1.png[Screenshot of Regions Layer,400,600]
+image::AssetScreen1.png[Screenshot of Regions Layer,400,600]
 
-image::asset-topology/AssetScreen2.png[Screenshot of Buildings Layer,400,600]
+image::AssetScreen2.png[Screenshot of Buildings Layer,400,600]
 
-image::asset-topology/AssetScreen3.png[Screenshot of Nodes Layer,400,600]
+image::AssetScreen3.png[Screenshot of Nodes Layer,400,600]
 
 == Asset Layers
 
