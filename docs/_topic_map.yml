@@ -102,6 +102,12 @@ Topics:
     - Name: Introduction
       File: introduction
 ---
+Name: Anonymous Usage Statistics
+Dir: anonymous-usage-statistics
+Topics:
+    - Name: Data Choices
+      File: datachoices
+---
 Name: Service Assurance
 Dir: service-assurance
 Topics:
@@ -220,3 +226,100 @@ Topics:
           File: WsManMonitor
         - Name: XmpMonitor
           File: XmpMonitor
+---
+Name: Performance Management
+Dir: performance-data-collection
+Topics:
+    - Name: Introduction
+      File: introduction
+    - Name: Collectd Configuration
+      File: configuration
+    - Name: Collection Packages
+      File: collection-packages
+    - Name: Collectors
+      Dir: collectors
+      Topics:
+        - Name: SnmpCollector
+          File: SnmpCollector
+        - Name: HTTP
+          File: http
+        - Name: JDBC
+          File: jdbc
+        - Name: JMX
+          File: jmx
+        - Name: NSClient++
+          File: nsclient
+        - Name: TCA
+          File: tca
+        - Name: VMware CIM
+          File: vmware-cim
+        - Name: VMware
+          File: vmware
+        - Name: WMI
+          File: wmi
+        - Name: WS-Man
+          File: wsman
+        - Name: XML
+          File: xml
+        - Name: XMP
+          File: xmp
+    - Name: Shell Commands
+      Dir: shell-commands
+      Topics:
+        - Name: Introduction
+          File: introduction
+        - Name: Ad-hoc Collection
+          File: adhoc-collection
+        - Name: Stress Testing
+          File: stress-testing
+---
+Name: Events
+Dir: events
+Topics:
+  - Name: Anatomy of Events
+    File: anatomy-events
+  - Name: Event sources
+    File: event-sources
+  - Name: Sources
+    Dir: sources
+    Topics:
+      - Name: SNMP Traps
+        File: snmp-traps
+      - Name: Syslog
+        File: syslog
+      - Name: ReST
+        File: rest
+      - Name: XML TCP
+        File: xml-tcp
+      - Name: EIF Adapter
+        File: eif-adapter
+      - Name: TL1
+        File: tl1
+  - Name: Eventbus
+    File: eventbus
+---
+Name: Alarms
+Dir: alarms
+Topics:
+  - Name: Alarm Sound and Flash
+    File: alarm-sound-flash
+---
+Name: Notifications
+Dir: notifications
+Topics:
+  - Name: Introduction
+    File: introduction
+  - Name: Getting Started
+    File: getting-started
+  - Name: Concepts
+    File: concepts
+  - Name: Bonus Strategies
+    File: bonus-strategies
+  - Name: Strategies
+    Dir: strategies
+    Topics:
+      - Name: Mattermost
+        File: mattermost
+      - Name: Slack
+        File: slack
+  
