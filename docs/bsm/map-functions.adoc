@@ -1,8 +1,5 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
-=== Map Functions
+== Map Functions
 
 The _Map Functions_ define how the _Severity_ of the edge will be used in the _Reduce Function_ of the parent when calculating the _Operational Status_.
 

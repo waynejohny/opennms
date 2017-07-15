@@ -1,7 +1,4 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
 This section describes how to model and configure _Business Services (BS)_ and orchestrate them in a hierarchy.
 The concepts and usage of the section _Business Service Monitoring_ from the _User Guide_ is presumed.
 
