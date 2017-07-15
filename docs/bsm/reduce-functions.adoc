@@ -1,8 +1,5 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
-=== Reduce Functions
+== Reduce Functions
 
 A _Reduce Function_ is used to aggregate the _Operational Status_ for the _BS_.
 The _Alarm Severity_ from the _Edges_ are used as input for the _Reduce Function_.

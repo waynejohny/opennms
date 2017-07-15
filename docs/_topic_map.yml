@@ -357,3 +357,19 @@ Topics:
         File: SnmpDetector
       - Name: WS-Man
         File: wsman
+---
+Name: Business Service Monitoring
+Dir: business-service-monitoring
+Topics:
+  - Name: Introduction
+    File: introduction
+  - Name: Business Service Definition
+    File: business-service-definition
+  - Name: Edges
+    File: edges
+  - Name: Map Functions
+    File: map-functions
+  - Name: Reduce Functions
+    File: reduce-functions
+  - Name: Business Service Daemon
+    File: bsmd
