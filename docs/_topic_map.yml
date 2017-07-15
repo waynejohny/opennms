@@ -355,8 +355,8 @@ Topics:
     Topics:
       - Name: SnmpDetector
         File: SnmpDetector
-      - Name: WS-Man
-        File: wsman
+      - Name: WsManDetector
+        File: WsManDetector
 ---
 Name: Business Service Monitoring
 Dir: business-service-monitoring
@@ -373,3 +373,9 @@ Topics:
     File: reduce-functions
   - Name: Business Service Daemon
     File: bsmd
+---
+Name: Topology Map
+Dir: topology-map
+Topics:
+  - Name: Topology
+    File: topology
