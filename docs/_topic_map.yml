@@ -453,12 +453,10 @@ Topics:
           File: notifd
         - Name: Pollerd
           File: pollerd
----
-Name: System Properties
-Dir: system-properties
-Topics:
-    - Name: Introduction
-      File: introduction
+    - Name: RMI
+      File: rmi
+    - Name: System Properties
+      File: system-properties
 ---
 Name: Ticketing Integration
 Dir: ticketing-integration
