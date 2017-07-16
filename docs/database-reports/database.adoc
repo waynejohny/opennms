@@ -4,13 +4,13 @@
 
 == Database Reports
 
-Reporting on information from the _{opennms-product-name}_ monitoring system is important for strategical or operational decisions.
+Reporting on information from the _{product-title}_ monitoring system is important for strategical or operational decisions.
 _Database Reports_ give access to the embedded _JasperReports_ engine and allows to create and customize report templates.
-These reports can be executed on demand or on a pre-defined schedule within _{opennms-product-name}_.
+These reports can be executed on demand or on a pre-defined schedule within _{product-title}_.
 
-NOTE: Originally _Database Reports_ were introduced to create reports working on data stored in the _{opennms-product-name}_ database only.
+NOTE: Originally _Database Reports_ were introduced to create reports working on data stored in the _{product-title}_ database only.
       This is no longer mandatory, also performance data can be used.
-      Theoretically the reports do not necessarily need to be _{opennms-product-name}_ related.
+      Theoretically the reports do not necessarily need to be _{product-title}_ related.
 
 WARNING: The _{opennms-product-name} Report Engine_ allows the creation of various kinds of reports and also supports distributed report repositories.
          At the moment these features are not covered by this documentation.
@@ -35,14 +35,14 @@ For more details on how _JasperReports_ works, please have a look at the link:ht
 
 == Modify existing reports
 
-All default reports of _{opennms-product-name}_ are located in `$OPENNMS_HOME/etc/report-templates`.
-Each `.jrxml` file located there can be modified and the changes are applied the next time a report is created by _{opennms-product-name}_.
+All default reports of _{product-title}_ are located in `$OPENNMS_HOME/etc/report-templates`.
+Each `.jrxml` file located there can be modified and the changes are applied the next time a report is created by _{product-title}_.
 
-When a subreport has been modified _{opennms-product-name}_ will detect a change based on the report's `lastModified` time and will recompile the report.
+When a subreport has been modified _{product-title}_ will detect a change based on the report's `lastModified` time and will recompile the report.
 A compiled version of the report is represented by a `.jasper` file with the same name as the `.jrxml` file.
 Subreports are located in `$OPENNMS_HOME/etc/report-templates/subreports`.
 
-TIP: If unsure, simply delete all `.jasper` files and _{opennms-product-name}_ will automatically compile the subreports if needed.
+TIP: If unsure, simply delete all `.jasper` files and _{product-title}_ will automatically compile the subreports if needed.
 
 == Add a custom report
 
@@ -177,7 +177,7 @@ In addition to the `queryString` the following _JasperReports_ parameters are su
 [[ga-database-reports-helper-methods]]
 == Helper methods
 
-There are a couple of helper methods to help creating reports in _{opennms-product-name}_.
+There are a couple of helper methods to help creating reports in _{product-title}_.
 
 These helpers come along with the _Measurement Datasource_.
 
@@ -281,8 +281,8 @@ To get the appropriate `interface descriptor` depends on the input parameter.
 [[ga-database-reports-https]]
 === Use HTTPS
 
-To establish a secure connection to the _Measurements API_ the public certificate of the running _{opennms-product-name}_ must be imported to the _Java Trust Store_.
-In Addition _{opennms-product-name}_ must be configured to use that _Java Trust Store_.
+To establish a secure connection to the _Measurements API_ the public certificate of the running _{product-title}_ must be imported to the _Java Trust Store_.
+In Addition _{product-title}_ must be configured to use that _Java Trust Store_.
 Please follow the instructions in this <<ga-operation-ssl-opennms-trust-store,chapter>> to setup the _Java Trust Store_ correctly.
 
 In addition please also set the property `org.opennms.netmgt.jasper.measurement.ssl.enable` in `$OPENNMS_HOME\etc\opennms.properties` to `true` to ensure that only secure connections are established.

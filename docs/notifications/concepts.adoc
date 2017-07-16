@@ -1,11 +1,8 @@
 
-// Allow GitHub image rendering
-:imagesdir: ../images
-
 [[ga-notifications-concepts]]
-=== Concepts
+== Concepts
 
-_Notifications_ are how _{opennms-product-name}_ informs users about an event that happened in the network, without the users having to log in and look at the UI.
+_Notifications_ are how _{product-title}_ informs users about an event that happened in the network, without the users having to log in and look at the UI.
 The core concepts required to understand notifications are:
 
 * Events and UEIs
@@ -17,9 +14,9 @@ The core concepts required to understand notifications are:
 These concepts fit together to form an _Event Notification Definition_.
 Also related, but presently only loosely coupled to notifications, are _Alarms_ and _Acknowledgments_.
 
-==== Events and UEIs
+=== Events and UEIs
 
-As discussed in the chapter on <<ga-events>>, events are central to the operation of _{opennms-product-name}_.
+As discussed in the chapter on <<ga-events>>, events are central to the operation of _{product-title}_.
 Almost everything that happens in the system is the result of, or the cause of, one or more events; Every notification is triggered by exactly one event.
 A good understanding of events is therefore essential to a working knowledge of notifications.
 
@@ -27,9 +24,9 @@ Every event has a _UEI_ (Uniform Event Identifier), a string uniquely identifyin
 UEIs are typically formatted in the style of a URI, but the only requirement is that they start with the string `uei.`.
 Most notifications are triggered by an exact UEI match (though they may also be triggered with partial UEI matches using regular expression syntax).
 
-==== Users, Groups, and On-Call Roles
+=== Users, Groups, and On-Call Roles
 
-_Users_ are entities with login accounts in the _{opennms-product-name}_ system.
+_Users_ are entities with login accounts in the _{product-title}_ system.
 Ideally each user corresponds to a person.
 They are used to control access to the web UI, but also carry contact information (e-mail addresses, phone numbers, etc.) for the people they represent.
 A user may receive a notification either individually or as part of a _Group_ or _On-Call Role_.
@@ -59,7 +56,7 @@ NOTE: The order of the _Users_ in the group is relevant and is used as the order
 . Use the trash bin icon next to the _Group_ to delete
 . Confirm delete request with *OK*
 
-_On-Call Roles_ are an overlay on top of groups, designed to enable _{opennms-product-name}_ to target the appropriate user or users according to a calendar configuration.
+_On-Call Roles_ are an overlay on top of groups, designed to enable _{product-title}_ to target the appropriate user or users according to a calendar configuration.
 A common use case is to have System Engineers in _On-Call_ rotations with a given schedule.
 The _On-Call Roles_ allow to assign a predefined _Duty Schedule_ to an existing _Group_ with _Users_.
 For each _On-Call Role_ a _User_ is assigned as a _Supervisor_ to be responsible for the group of people in this _On-Call Role_.
@@ -75,7 +72,7 @@ For each _On-Call Role_ a _User_ is assigned as a _Supervisor_ to be responsible
 . Click *Save* to persist the _Schedule_
 . Click *Done* to apply the changes
 
-==== Duty Schedules
+=== Duty Schedules
 
 Every _User_ and _Group_ may have a _Duty Schedule_, which specifies that user's (or group's) weekly schedule for receiving notifications.
 If a notification should be delivered to an individual user, but that user is not on duty at the time, the notification will never be delivered to that user.
@@ -84,7 +81,7 @@ If the group is on duty at the time the notification is created, then all users 
 If the group is on duty, but no member user is currently on duty, then the notification will be queued and sent to the next user who comes on duty.
 If the group is off duty at the time the notification is created, then the notification will never be sent.
 
-==== Destination Paths
+=== Destination Paths
 
 A _Destination Path_ is a named, reusable set of rules for sending notifications.
 Every destination path has an initial step and zero or more escalation steps.
@@ -113,7 +110,7 @@ Each step also has an _auto-notify_ switch, which may be set to `off`, `on`, or 
 This switch specifies the logic used when deciding whether or not to send a notice for an auto-acknowledged notification to a target that was not on duty at the time the notification was first created.
 If `off`, notices will never be sent to such a target; if `on`, they will always be sent; if `auto`, the system employs heuristics aimed at "doing the right thing".
 
-==== Notification Commands
+=== Notification Commands
 
 A _Notification Command_ is a named, reusable execution profile for a Java class or external program command used to convey notices to targets.
 The following notification commands are included in the default configuration:
@@ -145,6 +142,6 @@ The following notification commands are included in the default configuration:
 
 Notification commands are customizable and extensible by editing the `notificationCommands.xml` file.
 
-NOTE: Use external binary notification commands sparingly to avoid fork-bombing your _{opennms-product-name}_ system.
+NOTE: Use external binary notification commands sparingly to avoid fork-bombing your _{product-title}_ system.
 Originally, all notification commands were external.
 Today only the `numericPage` and `textPage` commands use external programs to do their work.

@@ -3,14 +3,14 @@
 :imagesdir: ./images
 
 The _Trend_ feature allows to display small inline charts of database-based statistics.
-These chart are accessible in the _Status_ menu of the _OpenNMS'_ web application.
-Furthermore it is also possible to configure these charts to be displayed on the _OpenNMS'_ landing page.
+These chart are accessible in the _Status_ menu of the _{product-title}_ web application.
+Furthermore it is also possible to configure these charts to be displayed on the _{product-title}_ landing page.
 To achieve this alter the `org.opennms.web.console.centerUrl` property to also include the entry `/trend/trend-box.htm`.
 
 .Trend chart structure
-image:trend-chart.png[]
+image::trend-chart.png[]
 
-These charts can be configured and defined in the `trend-configuration.xml` file in your _OpenNMS'_ `etc` directory.
+These charts can be configured and defined in the `trend-configuration.xml` file in your _{product-title}_ `etc` directory.
 The following sample defines a _Trend_ chart for displaying nodes with ongoing outages.
 
 .Sample _Trend_ chart XML definition for displaying nodes with outages
@@ -106,4 +106,3 @@ You can also display a single graph in your JSP files by including the file `/tr
     <jsp:param name="name" value="example"/>
 </jsp:include>
 ----
-

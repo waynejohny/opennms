@@ -1,15 +1,15 @@
 
 == Adapters
 
-The {opennms-product-name} _Provisiond API_ also supports _Provisioning Adapters_ (plugins) for integration with external systems during the provisioning Import phase.
-When node entities are added, updated, deleted, or receive a configuration management change event, {opennms-product-name} will call the adapter for the provisioning activities with integrated systems.
+The _{product-title}_ _Provisiond API_ also supports _Provisioning Adapters_ (plugins) for integration with external systems during the provisioning Import phase.
+When node entities are added, updated, deleted, or receive a configuration management change event, _{product-title}_ will call the adapter for the provisioning activities with integrated systems.
 
-Currently, {opennms-product-name} supports the following adapters:
+Currently, _{product-title}_ supports the following adapters:
 
 === DDNS Adapter
 
 The Opposite end of _Provisiond_ integration from the DNS Requisition Import, is the _DDNS adapter_.
-This adapter uses the _dynamic DNS protocol_ to update a DNS system as nodes are provisioned into {opennms-product-name}.
+This adapter uses the _dynamic DNS protocol_ to update a DNS system as nodes are provisioned into _{product-title}_.
 To configure this adapter, edit the `opennms.properties` file and set the `importer.adapter.dns.server property`:
 
  importer.adapter.dns.server=192.168.1.1

@@ -1,7 +1,7 @@
 
-The global behavior of _OpenNMS_ is configured with Property files.
-Configuration can have also effect on the _Java Virtual Machine_ underneath _OpenNMS_.
-Changes in these property files require a restart of _OpenNMS_.
+The global behavior of _{product-title}_ is configured with Property files.
+Configuration can have also effect on the _Java Virtual Machine_ underneath _{product-title}_.
+Changes in these property files require a restart of _{product-title}_.
 The configuration files can be found in `${OPENNMS_HOME}/etc`.
 
 The priority for _Java system properties_ is as follows:

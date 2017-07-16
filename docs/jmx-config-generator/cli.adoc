@@ -1,19 +1,14 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
 The command line _(CLI)_ based tool is not installed by default.
 It is available as _Debian_ and _RPM_ package in the official repositories.
 
 .RHEL based installation with Yum
-
 [source, shell]
 ----
 yum install opennms-jmx-config-generator
 ----
 
 .Debian based installation with apt
-
 [source, shell]
 ----
 apt-get install opennms-jmx-config-generator
