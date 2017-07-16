@@ -1,14 +1,11 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
 [[ga-ticketing-jira]]
-=== JIRA Ticketing Plugin
+== JIRA Ticketing Plugin
 
-The _JIRA Ticketing Plugin_ is used to create JIRA Issues in response to _{product-title}_ alarms.
+The _JIRA Ticketing Plugin_ is used to create JIRA Issues in response to _{opennms-product-name}_ alarms.
 
 [[ga-ticketing-jira-setup]]
-==== Setup
+=== Setup
 
 First, you'll need to install the `{opennms-package-base-name}-plugin-ticketer-jira` package for your system.
 The JIRA ticketing plugin and it's dependencies are not part of the core packages.
@@ -47,18 +44,18 @@ NOTE: Either use `jira:list-issue-types` _OSGI Command_ or https://confluence.at
 
 Next, add `jira-troubleticketer` to the `featuresBoot` property in the `${OPENNMS_HOME}/etc/org.apache.karaf.features.cfg`
 
-Restart _{product-title}_.
+Restart _{opennms-product-name}_.
 
-When _{product-title}_ has started again, login to the _Karaf Shell_ and install the feature:
+When _{opennms-product-name}_ has started again, login to the _Karaf Shell_ and install the feature:
 
 [source]
 ----
-features:install jira-troubleticketer
+feature:install jira-troubleticketer
 ----
 
 The plugin should be ready to use.
 
-==== Jira Commands
+=== Jira Commands
 
 The _JIRA Ticketing Plugin_ provides various _OSGI Commands_ which can be used on the _Karaf Shell_ to help set up the plugin.
 
@@ -68,10 +65,9 @@ To list all available commands simply type `help | grep jira` in the _Karaf Shel
 
 Afterwards you can type for example `jira:list-projects --help` to determine the usage of a command.
 
+=== Custom fields
 
-==== Custom fields
-
-The _{product-title}_ Ticketer model is limited to the most common fields provided by all ticketing systems.
+The _{opennms-product-name}_ Ticketer model is limited to the most common fields provided by all ticketing systems.
 
 Besides the common fields creator, create date, description or subject, ticket system proprietary fields usually need to be set.
 
@@ -147,17 +143,43 @@ The following table describes valid values for an OpenNMS attribute.
 |===
 
 As described above the values are usually identified by their name instead of their id (projects are identified by their key).
-This is easier to read, but may brake the mapping code, if for example the name of a component changes in the future.
+This is easier to read, but may break the mapping code, if for example the name of a component changes in the future.
 To change the mapping from `name` (or `key`) to `id` an entry in `jira.properties` must be made:
 
-    jira.attribute.customfield_10113.resolution=id
+    jira.attributes.customfield_10113.resolution=id
 
 To learn more about the Jira REST API please consult the following pages:
 
  * https://developer.atlassian.com/jiradev/jira-apis/jira-rest-apis/jira-rest-api-tutorials/jira-rest-api-example-create-issue#JIRARESTAPIExample-CreateIssue-MultiSelect
  * https://docs.atlassian.com/jira/REST/cloud/
 
-===== Examples
+The following jira (custom) fields have been tested with jira version `6.3.15`:
+
+ * Checkboxes
+ * Date Picker
+ * Date Time Picker
+ * Group Picker (multiple groups)
+ * Group Picker (single group)
+ * Labels
+ * Number Field
+ * Project Picker (single project)
+ * Radio Buttons
+ * Select List (cascading)
+ * Select List (multiple choices)
+ * Select List (single choice)
+ * Text Field (multi-line)
+ * Text Field (read only)
+ * Text Field (single line)
+ * URL Field
+ * User Picker (multiple user)
+ * User Picker (single user)
+ * Version Picker (multiple versions)
+ * Version Picker (single version)
+
+NOTE: All other field types are mapped as is and therefore may not work.
+
+=== Examples
+
 The following output is the result of the command `jira:list-fields -h http://localhost:8080 -u admin -p testtest -k DUM -i Bug -s` and lists all available fields for project with key `DUM` and issue type `Bug`:
 
 [source]
@@ -217,7 +239,7 @@ ticket.addAttribute("customfield_10101", "2016-12-06"); <9>
 
 
 [[ga-ticketing-jira-troubleshooting]]
-==== Troubleshooting
+=== Troubleshooting
 
 When troubleshooting, consult the following log files:
 
