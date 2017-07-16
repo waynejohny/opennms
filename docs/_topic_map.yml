@@ -429,6 +429,10 @@ Topics:
       File: geocoder
     - Name: Resource CLI
       File: resource-cli
+    - Name: RMI
+      File: rmi
+    - Name: System Properties
+      File: system-properties
     - Name: Newts
       Dir: newts
       Topics:
@@ -453,10 +457,6 @@ Topics:
           File: notifd
         - Name: Pollerd
           File: pollerd
-    - Name: RMI
-      File: rmi
-    - Name: System Properties
-      File: system-properties
 ---
 Name: Ticketing Integration
 Dir: ticketing-integration
@@ -474,3 +474,29 @@ Topics:
     - Name: Kafka
       File: kafka
 ---
+Name: Plugin Manager
+Dir: plugin-manager
+Topics:
+    - Name: Introduction
+      File: introduction
+    - Name: Setting Karaf Instance Data
+      File: setting-karaf-instance-data
+    - Name: Installing Available Plugins
+      File: installing-available-plugins
+    - Name: Installing Licenses
+      File: installing-licences
+    - Name: Internal Plugins Repository
+      File: internal-plugins-repository
+    - Name: Plugins
+      Dir: plugins
+      Topics:
+          - Name: Introduction
+            File: introduction
+          - Name: Alarm Change Notifier
+            File: alarm-change-notifier
+          - Name: ElasticSearch ReST
+            File: es-rest
+          - Name: ElasticSearch ReST Mapping
+            File: es-rest-mapping
+          - Name: ElasticSearch ReST Mapping Table
+            File: es-rest-mapping-table
