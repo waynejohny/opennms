@@ -417,3 +417,39 @@ Topics:
         File: ospf-discovery
       - Name: IS-IS Link Discovery
         File: is-is-discovery
+---
+Name: Operation
+Dir: operation
+Topics:
+    - Name: SSL
+      File: ssl
+    - Name: Request Logging
+      File: request-logging
+    - Name: Geocoder
+      File: geocoder
+    - Name: Resource CLI
+      File: resource-cli
+    - Name: Newts
+      Dir: newts
+      Topics:
+        - Name: Introduction
+          File: introduction
+        - Name: Configuration
+          File: configuration
+        - Name: Cassandra JMX
+          File: cassandra-jmx
+        - Name: Cassandra Newts JMX
+          File: cassandra-newts-jmx
+        - Name: Newts Repository Converter
+          File: newts-repository-converter
+    - Name: Daemon Configuration Files
+      Dir: daemon-config-files
+      Topics:
+        - Name: Introduction
+          File: introduction
+        - Name: Eventd
+          File: eventd
+        - Name: Notifd
+          File: notifd
+        - Name: Pollerd
+          File: pollerd
