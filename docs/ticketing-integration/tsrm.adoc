@@ -1,14 +1,11 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
 [[ga-ticketing-tsrm]]
-=== TSRM Ticketing Plugin
+== TSRM Ticketing Plugin
 
-The _TSRM Ticketing Plugin_ is used to create TSRM incidents in response to _{product-title}_ alarms.
+The _TSRM Ticketing Plugin_ is used to create TSRM incidents in response to _{opennms-product-name}_ alarms.
 
 [[ga-ticketing-tsrm-setup]]
-==== Setup
+=== Setup
 
 In order to enable the plugin start by setting following property in `${OPENNMS_HOME}/etc/opennms.properties`:
 
@@ -36,7 +33,7 @@ When _OpenNMS_ has started again, login to the _Karaf Shell_ and install the fea
 
 [source]
 ----
-features:install tsrm-troubleticketer
+feature:install tsrm-troubleticketer
 ----
 
 The plugin should be ready to use. When troubleshooting, consult the following log files:
@@ -44,7 +41,7 @@ The plugin should be ready to use. When troubleshooting, consult the following l
 * ${OPENNMS_HOME}/data/log/karaf.log
 * ${OPENNMS_HOME}/logs/trouble-ticketer.log
 
-==== Mapping OpenNMS Ticket with TSRM Incident
+=== Mapping OpenNMS Ticket with TSRM Incident
 
 Following tables shows mapping between OpenNMS ticket and TSRM Incident
 
