@@ -28,6 +28,23 @@ Topics:
   - Name: Welcome
     File: index
 ---
+#
+# Reease Notes
+#
+Name: Release Notes
+Dir: horizon-release-notes
+Distros: horizon
+Topics:
+  - Name: Preface
+    File: preface
+  - Name: Whats New in 20
+    File: whatsnew-20
+  - Name: Changelog
+    File: changelog
+---
+#
+# Horizon related Documentation
+#
 Name: User Management
 Dir: user-management
 Distros: horizon
@@ -36,78 +53,6 @@ Topics:
     File: users
   - Name: Security Roles
     File: security-roles
----
-Name: Startpage
-Dir: startpage
-Distros: horizon
-Topics:
-  - Name: Grafana Dashboard Box
-    File: grafana-dashboard-box
----
-Name: Operations Board
-Dir: opsboard
-Distros: horizon
-Topics:
-  - Name: Introduction
-    File: introduction
-  - Name: Dashlets
-    Dir: dashlets
-    Topics:
-      - Name: Alarm Details
-        File: alarm-details
-      - Name: Alarms
-        File: alarms
-      - Name: Charts
-        File: charts
-      - Name: Grafana
-        File: grafana
-      - Name: Image
-        File: image
-      - Name: KSC Reports
-        File: ksc
-      - Name: Map
-        File: map
-      - Name: RRD
-        File: rrd
-      - Name: Real Time Console
-        File: rtc
-      - Name: Summary
-        File: summary
-      - Name: Surveillance View
-        File: surveillance
-      - Name: Topology Map
-        File: topology
-      - Name: URL
-        File: url
-  - Name: Boosting Behavior
-    File: boosting-behavior
-  - Name: Criteria Builder
-    File: criteria-builder
----
-Name: JMX Configuration Generator
-Dir: jmx-config-generator
-Distros: horizon
-Topics:
-  - Name: Introduction
-    File: introduction
-  - Name: Web-based User Interface
-    File: webui
-  - Name: Command Line Interface
-    File: cli
----
-Name: Heatmap
-Dir: heatmap
-Distros: horizon
-Topics:
-    - Name: Introduction
-      File: introduction
----
-Name: Trendline Visualization
-Dir: trend
-Distros: horizon
-Topics:
-    - Name: Introduction
-      File: introduction
 ---
 Name: Anonymous Usage Statistics
 Dir: anonymous-usage-statistics
@@ -403,13 +348,6 @@ Topics:
     - Name: GraphML
       File: graphml
 ---
-Name: Database Reports
-Dir: database-reports
-Distros: horizon
-Topics:
-  - Name: Database
-    File: database
----
 Name: Enhanced Linkd
 Dir: enlinkd
 Distros: horizon
@@ -476,6 +414,85 @@ Topics:
     - Name: TSRM
       File: tsrm
 ---
+Name: Startpage
+Dir: startpage
+Distros: horizon
+Topics:
+  - Name: Grafana Dashboard Box
+    File: grafana-dashboard-box
+---
+Name: Operations Board
+Dir: opsboard
+Distros: horizon
+Topics:
+  - Name: Introduction
+    File: introduction
+  - Name: Dashlets
+    Dir: dashlets
+    Topics:
+      - Name: Alarm Details
+        File: alarm-details
+      - Name: Alarms
+        File: alarms
+      - Name: Charts
+        File: charts
+      - Name: Grafana
+        File: grafana
+      - Name: Image
+        File: image
+      - Name: KSC Reports
+        File: ksc
+      - Name: Map
+        File: map
+      - Name: RRD
+        File: rrd
+      - Name: Real Time Console
+        File: rtc
+      - Name: Summary
+        File: summary
+      - Name: Surveillance View
+        File: surveillance
+      - Name: Topology Map
+        File: topology
+      - Name: URL
+        File: url
+  - Name: Boosting Behavior
+    File: boosting-behavior
+  - Name: Criteria Builder
+    File: criteria-builder
+---
+Name: JMX Configuration Generator
+Dir: jmx-config-generator
+Distros: horizon
+Topics:
+  - Name: Introduction
+    File: introduction
+  - Name: Web-based User Interface
+    File: webui
+  - Name: Command Line Interface
+    File: cli
+---
+Name: Heatmap
+Dir: heatmap
+Distros: horizon
+Topics:
+    - Name: Introduction
+      File: introduction
+---
+Name: Trendline Visualization
+Dir: trend
+Distros: horizon
+Topics:
+    - Name: Introduction
+      File: introduction
+---
+Name: Database Reports
+Dir: database-reports
+Distros: horizon
+Topics:
+  - Name: Database
+    File: database
+---
 Name: Plugin Manager
 Dir: plugin-manager
 Distros: horizon
@@ -511,6 +528,9 @@ Topics:
     - Name: SNMP
       File: snmp
 ---
+#
+# Minion related Documentation
+#
 Name: Minion
 Dir: minion
 Distros: minion
@@ -518,6 +538,9 @@ Topics:
     - Name: Kafka
       File: kafka
 ---
+#
+# Newts related Documentation
+#
 Name: Newts
 Dir: newts
 Distros: newts
