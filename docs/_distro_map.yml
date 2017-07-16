@@ -2,8 +2,8 @@
 horizon:
   name: Horizon
   author: OpenNMS Documentation Team <opennms-docs@lists.opennms.org>
-  site: opennms
-  site_name: OpenNMS
+  site: docs
+  site_name: Docs
   site_url: https://docs.opennms.org
   branches:
     jira/NMS-9508:
@@ -12,8 +12,8 @@ horizon:
 minion:
   name: Minion
   author: OpenNMS Documentation Team <opennms-docs@lists.opennms.org>
-  site: opennms
-  site_name: OpenNMS
+  site: docs
+  site_name: Docs
   site_url: https://docs.opennms.org
   branches:
     jira/NMS-9508:
@@ -22,8 +22,8 @@ minion:
 newts:
   name: Newts
   author: OpenNMS Documentation Team <opennms-docs@lists.opennms.org>
-  site: opennms
-  site_name: OpenNMS
+  site: docs
+  site_name: Docs
   site_url: https://docs.opennms.org
   branches:
     jira/NMS-9508:
