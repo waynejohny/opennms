@@ -37,7 +37,7 @@ If you would like the include the usernames associated with the requests in the 
 -->
 ----
 
-After restarting _{opennms-product-name}_, requests logs of the following form should be available in `logs/jetty-requests-*.log`:
+After restarting _{product-title}_, requests logs of the following form should be available in `logs/jetty-requests-*.log`:
 
 [source]
 ----

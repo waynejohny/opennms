@@ -2,7 +2,7 @@
 [[ga-ticketing-tsrm]]
 == TSRM Ticketing Plugin
 
-The _TSRM Ticketing Plugin_ is used to create TSRM incidents in response to _{opennms-product-name}_ alarms.
+The _TSRM Ticketing Plugin_ is used to create TSRM incidents in response to _{product-title}_ alarms.
 
 [[ga-ticketing-tsrm-setup]]
 === Setup

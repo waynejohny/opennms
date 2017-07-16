@@ -1,10 +1,7 @@
 
-// Allow GitHub image rendering
-:imagesdir: ./images
-
 The _Critical Service_ is used to correlate outages from _Services_ to a _nodeDown_ or _interfaceDown_ event.
 It is a global configuration of _Pollerd_ defined in `poller-configuration.xml`.
-The _OpenNMS_ default configuration enables this behavior.
+The _{product-title}_ default configuration enables this behavior.
 
 .Critical Service Configuration in Pollerd
 [source, xml]

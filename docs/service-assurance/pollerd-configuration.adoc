@@ -34,7 +34,7 @@ The configuration file is structured in the following parts:
 <3> In case of unresponsive service services a _serviceUnresponsive_ event is generated and not an outage.
     It prevents to apply the _Downtime Model_ to retest the service after 30 seconds and prevents false alarms.
 
-Configuration changes are applied by restarting _OpenNMS_ and _Pollerd_.
+Configuration changes are applied by restarting _{product-title}_ and _Pollerd_.
 It is also possible to send an _Event_ to _Pollerd_ reloading the configuration.
 An _Event_ can be sent on the _CLI_ or the _Web User Interface_.
 
@@ -48,4 +48,4 @@ cd $OPENNMS_HOME/bin
 .Send configuration reload event with the Web User Interface
 image::04_send-event-WebUI.png[]
 
-IMPORTANT: If you define *new* services in `poller-configuration.xml` a service restart of _OpenNMS_ is necessary.
+IMPORTANT: If you define *new* services in `poller-configuration.xml` a service restart of _{product-title}_ is necessary.

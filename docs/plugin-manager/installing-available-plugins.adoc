@@ -40,12 +40,12 @@ _Available Plugin's server_ can be part of an externally hosted plugin shopping 
 internal list of available plugins as described in the section on Internal Plugins.
 
 In order for externally downloaded plugins to be installed, the _Available Plugin's server_ must have a related maven repository from which
-_Karaf_ can download the feature. By default feature download is not enabled in _{opennms-product-name}_. To enable _Karaf_ external
+_Karaf_ can download the feature. By default feature download is not enabled in _{product-title}_. To enable _Karaf_ external
 feature download, the address of the maven repository should be entered in the org.ops4j.pax.url.mvn.cfg file in the
-_{opennms-product-name}_ /etc directory.
+_{product-title}_ /etc directory.
 
 Alternatively the _Plugin Manager_ can list the available plugins which have been installed on the local machine as bundled Plugin Kar's
-(using the _Karaf_ Kar deploy mechanism) along with any internal plugins bundled with _{opennms-product-name}_.
+(using the _Karaf_ Kar deploy mechanism) along with any internal plugins bundled with _{product-title}_.
 In this case, the _Plugin Server URL_ should be pointed at http:\\localhost:8980\opennms.
 
 The admin username and passwords are used to access the _Available Plugins Server_.

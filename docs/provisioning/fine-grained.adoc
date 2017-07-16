@@ -1,7 +1,7 @@
 
 == Fine Grained Provisioning Using _provision.pl_
 
-_provision.pl_ provides an example command-line interface to the provisioning-related {opennms-product-name} REST API endpoints.
+_provision.pl_ provides an example command-line interface to the provisioning-related _{product-title}_ REST API endpoints.
 
 The script has many options but the first 3 optional parameters are described here:
 
@@ -20,12 +20,12 @@ _provision.pl_ provides easy access to the requisition REST service using the _r
 ${OPENNMS_HOME}/bin/provision.pl requisition customer1
 ----
 
-This command will create a new, empty (containing no nodes) requisition in {opennms-product-name}.
+This command will create a new, empty (containing no nodes) requisition in _{product-title}_.
 
 The new requisition starts life in the `pending` state.
-This allows you to iteratively build the requisition and then later actually import the nodes in the requisition into {opennms-product-name}.
+This allows you to iteratively build the requisition and then later actually import the nodes in the requisition into _{product-title}_.
 This handles all adds/changes/deletes at once.
-So, you could be making changes all day and then at night either have a schedule in {opennms-product-name} that imports the group automatically or you can send a command through the REST service from an outside system to have the pending requisition imported/reimported.
+So, you could be making changes all day and then at night either have a schedule in _{product-title}_ that imports the group automatically or you can send a command through the REST service from an outside system to have the pending requisition imported/reimported.
 
 You can get a list of all existing requisitions with the `list` option of the `provision.pl` script:
 
@@ -82,7 +82,7 @@ ${OPENNMS_HOME}/bin/provision.pl category add customer1 1 Production
 
 This adds the two categories to the node and is now in the pending requisition.
 
-These categories are case-sensitive but do not have to be already defined in {opennms-product-name}.
+These categories are case-sensitive but do not have to be already defined in _{product-title}_.
 They will be created on the fly during the import if they do not already exist.
 
 ==== Setting Asset Fields on a Node
@@ -100,8 +100,8 @@ This will add value of `9999` to the asset field: _serialnumber_.
 ${OPENNMS_HOME}/bin/provision.pl requisition import customer1
 ----
 
-This will cause {opennms-product-name} Provisiond to import the pending `customer1` requisition.
-The formerly pending requisition will move into the `deployed` state inside {opennms-product-name}.
+This will cause _{product-title}_ Provisiond to import the pending `customer1` requisition.
+The formerly pending requisition will move into the `deployed` state inside _{product-title}_.
 
 .Deleting a Node from a Requisition
 
