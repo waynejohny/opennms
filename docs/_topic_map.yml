@@ -500,3 +500,9 @@ Topics:
             File: es-rest-mapping
           - Name: ElasticSearch ReST Mapping Table
             File: es-rest-mapping-table
+---
+Name: Special Cases and Workarounds
+Dir: workarounds
+Topics:
+    - Name: SNMP
+      File: snmp
