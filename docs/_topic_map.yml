@@ -468,3 +468,9 @@ Topics:
     - Name: TSRM
       File: tsrm
 ---
+Name: Minion
+Dir: minion
+Topics:
+    - Name: Kafka
+      File: kafka
+---
