@@ -51,43 +51,43 @@ public class SlackNotificationStrategy extends AbstractSlackCompatibleNotificati
 
     @Override
     protected String decorateMessageSubject(String subject) {
-    	if ("".equals(subject)) {
-    		return "";
-    	}
-    	StringBuilder bldr = new StringBuilder("*");
-    	bldr.append(subject).append("*").append("\n");
-    	return bldr.toString();
-    }
-    
-    protected String getUrlPropertyName() {
-    	return SLACK_URL_PROPERTY;
-    }
-    
-    protected String getUsernamePropertyName() {
-    	return SLACK_USERNAME_PROPERTY;
-    }
-    
-    protected String getIconUrlPropertyName() {
-    	return SLACK_ICONURL_PROPERTY;
-    }
-    
-    protected String getIconEmojiPropertyName() {
-    	return SLACK_ICONEMOJI_PROPERTY;
-    }
-    
-    protected String getChannelPropertyName() {
-    	return SLACK_CHANNEL_PROPERTY;
+        if ("".equals(subject)) {
+            return "";
+        }
+        StringBuilder bldr = new StringBuilder("*");
+        bldr.append(subject).append("*").append("\n");
+        return bldr.toString();
     }
 
-	protected String decorateMessageBody(String body) {
-		return body;
-	}
+    protected String getUrlPropertyName() {
+        return SLACK_URL_PROPERTY;
+    }
+
+    protected String getUsernamePropertyName() {
+        return SLACK_USERNAME_PROPERTY;
+    }
+
+    protected String getIconUrlPropertyName() {
+        return SLACK_ICONURL_PROPERTY;
+    }
+
+    protected String getIconEmojiPropertyName() {
+        return SLACK_ICONEMOJI_PROPERTY;
+    }
+
+    protected String getChannelPropertyName() {
+        return SLACK_CHANNEL_PROPERTY;
+    }
+
+    protected String decorateMessageBody(String body) {
+        return body;
+    }
 
     @Override
-	protected String formatWebhookErrorResponse(int statusCode, String contents) {
-    	StringBuilder bldr = new StringBuilder("Response code: ");
-    	bldr.append(statusCode).append("; ");
-    	bldr.append(" Message: ").append(contents);
-    	return bldr.toString();
+    protected String formatWebhookErrorResponse(int statusCode, String contents) {
+        StringBuilder bldr = new StringBuilder("Response code: ");
+        bldr.append(statusCode).append("; ");
+        bldr.append(" Message: ").append(contents);
+        return bldr.toString();
     }
 }
