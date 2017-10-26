@@ -157,7 +157,7 @@ public final class Packet {
                 throw null;
             }
 
-            if (field.fieldLength > informationElement.get().getMaximumFieldLength()) {
+            if (field.fieldLength > informationElement.get().getMaximumFieldLength() || field.fieldLength < informationElement.get().getMinimumFieldLength()) {
                 // TODO: Log me
                 throw null;
             }
