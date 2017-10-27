@@ -1,8 +1,8 @@
 /*******************************************************************************
  * This file is part of OpenNMS(R).
  *
- * Copyright (C) 2016 The OpenNMS Group, Inc.
- * OpenNMS(R) is Copyright (C) 1999-2016 The OpenNMS Group, Inc.
+ * Copyright (C) 2017-2017 The OpenNMS Group, Inc.
+ * OpenNMS(R) is Copyright (C) 1999-2017 The OpenNMS Group, Inc.
  *
  * OpenNMS(R) is a registered trademark of The OpenNMS Group, Inc.
  *
@@ -26,41 +26,20 @@
  *     http://www.opennms.com/
  *******************************************************************************/
 
-package org.opennms.core.rpc.camel;
+package org.opennms.core.rpc.aws.sqs;
 
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.model.AmazonSQSException;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
 import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.opennms.core.camel.JmsQueueNameFactory;
 import org.opennms.core.rpc.api.RpcRequest;
 import org.opennms.core.rpc.api.RpcResponse;
-import org.opennms.core.utils.PropertiesUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.opennms.core.rpc.camel.CamelRpcClientPreProcessor;
+import org.opennms.core.rpc.camel.CamelRpcConstants;
+import org.opennms.core.rpc.camel.CamelRpcRequest;
 
-import java.util.concurrent.TimeUnit;
-
-public class CamelRpcClientPreProcessor implements Processor {
-    private static final Logger LOG = LoggerFactory.getLogger(CamelRpcClientPreProcessor.class);
-
-    public static final String CAMEL_JMS_REQUEST_TIMEOUT_PROPERTY = "org.opennms.jms.timeout";
-    public static final long CAMEL_JMS_REQUEST_TIMEOUT_DEFAULT = 20000L;
-    protected final Long CAMEL_JMS_REQUEST_TIMEOUT;
-
-    public CamelRpcClientPreProcessor() {
-        long camelJmsRequestTimeout = PropertiesUtils.getProperty(System.getProperties(), CAMEL_JMS_REQUEST_TIMEOUT_PROPERTY, CAMEL_JMS_REQUEST_TIMEOUT_DEFAULT);
-
-        if (camelJmsRequestTimeout <= 0L) {
-            LOG.error("Invalid value {} for property {} - must be greater than zero!", camelJmsRequestTimeout, CAMEL_JMS_REQUEST_TIMEOUT_PROPERTY);
-            camelJmsRequestTimeout = CAMEL_JMS_REQUEST_TIMEOUT_DEFAULT;
-        }
-
-        LOG.debug("Value {} set for property {}", camelJmsRequestTimeout, CAMEL_JMS_REQUEST_TIMEOUT_PROPERTY);
-
-        CAMEL_JMS_REQUEST_TIMEOUT = camelJmsRequestTimeout;
-    }
+public class AmazonSQSClientPreProcessor extends CamelRpcClientPreProcessor {
 
     @Override
     public void process(Exchange exchange) {

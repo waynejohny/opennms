@@ -40,12 +40,12 @@
         <!-- The routes are managed by the CamelRpcServerRouteManager  -->
     </camelContext>
 
-    <bean id="camelRpcServerRouteManager" class="org.opennms.core.rpc.camel.CamelRpcServerRouteManager" >
+    <bean id="jmsRpcServerRouteManager" class="org.opennms.core.rpc.jms.JmsRpcServerRouteManager" >
         <argument ref="rpcServer"/>
         <argument ref="minionIdentity"/>
     </bean>
 
     <reference-list id="rpcModulesRef" interface="org.opennms.core.rpc.api.RpcModule" availability="optional">
-        <reference-listener bind-method="bind" unbind-method="unbind" ref="camelRpcServerRouteManager"/>
+        <reference-listener bind-method="bind" unbind-method="unbind" ref="jmsRpcServerRouteManager"/>
     </reference-list>
 </blueprint>

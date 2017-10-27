@@ -35,6 +35,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ExchangePattern;
 import org.apache.camel.Route;
+import org.apache.camel.RoutesBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jms.JmsEndpoint;
 import org.opennms.core.camel.JmsQueueNameFactory;
@@ -51,7 +52,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author jwhite
  */
-public class CamelRpcServerRouteManager {
+public abstract class CamelRpcServerRouteManager {
 
     private static final Logger LOG = LoggerFactory.getLogger(CamelRpcServerRouteManager.class);
 
@@ -66,41 +67,11 @@ public class CamelRpcServerRouteManager {
         this.identity = Objects.requireNonNull(identity);
     }
 
-    private static final class DynamicRpcRouteBuilder extends RouteBuilder {
-        private final MinionIdentity identity;
-        private final RpcModule<RpcRequest,RpcResponse> module;
-        private final JmsQueueNameFactory queueNameFactory;
-
-        private DynamicRpcRouteBuilder(CamelContext context, MinionIdentity identity, RpcModule<RpcRequest,RpcResponse> module) {
-            super(context);
-            this.identity = identity;
-            this.module = module;
-            this.queueNameFactory = new JmsQueueNameFactory(CamelRpcConstants.JMS_QUEUE_PREFIX,
-                    module.getId(), identity.getLocation());
-        }
-
-        public String getQueueName() {
-            return queueNameFactory.getName();
-        }
-
-        @Override
-        public void configure() throws Exception {
-            final JmsEndpoint endpoint = getContext().getEndpoint(String.format("queuingservice:%s?asyncConsumer=true",
-                    queueNameFactory.getName()), JmsEndpoint.class);
-
-            final String selector = getJmsSelector(identity.getId());
-            LOG.trace("Using JMS selector: {} for module: {} on: {}", selector, module, identity);
-            endpoint.setSelector(selector);
-
-            from(endpoint).setExchangePattern(ExchangePattern.InOut)
-                .process(new CamelRpcServerProcessor(module))
-                .routeId(getRouteId(module));
-        }
-    }
-
     public static String getRouteId(RpcModule<?,?> module) {
         return "RPC.Server." + module.getId();
     }
+
+    public abstract RouteBuilder getRouteBuilder(CamelContext context, MinionIdentity identity, RpcModule<RpcRequest,RpcResponse> module);
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public void bind(RpcModule module) throws Exception {
@@ -125,14 +96,14 @@ public class CamelRpcServerRouteManager {
                 }
             } else {
                 if (existingRoute == null) {
-                    final DynamicRpcRouteBuilder routeBuilder = new DynamicRpcRouteBuilder(context, identity, rpcModule);
+                    final RouteBuilder routeBuilder = getRouteBuilder(context, identity, module);
                     context.addRoutes(routeBuilder);
                     routeIdsByModule.put(rpcModule, routeId);
-                    LOG.info("Registered RpcModule {} ({}) on route {} with queue {}",
+                    LOG.info("Registered RpcModule {} ({}) on route {} with builder {}",
                         rpcModule.getId(),
                         Integer.toHexString(rpcModule.hashCode()),
                         routeId,
-                        routeBuilder.getQueueName()
+                        routeBuilder
                     );
                 } else {
                     LOG.warn("RpcModule {} ({}) cannot be registered, route {} is already present: {}",
@@ -161,13 +132,4 @@ public class CamelRpcServerRouteManager {
         }
     }
 
-    static String getJmsSelector(String systemId) {
-        if (systemId == null) {
-            return String.format("%s IS NULL", CamelRpcConstants.JMS_SYSTEM_ID_HEADER);
-        }
-        return String.format("%s='%s' OR %s IS NULL",
-                CamelRpcConstants.JMS_SYSTEM_ID_HEADER,
-                systemId.replace("'", "\\'"),
-                CamelRpcConstants.JMS_SYSTEM_ID_HEADER);
-    }
 }

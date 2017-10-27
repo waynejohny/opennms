@@ -7,6 +7,6 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
        ">
 
-    <import resource="classpath:/META-INF/opennms/applicationContext-rpc-client-camel.xml" />
+    <import resource="classpath:/META-INF/opennms/applicationContext-rpc-client-jms.xml" />
 
 </beans>

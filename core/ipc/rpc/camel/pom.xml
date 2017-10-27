@@ -7,8 +7,8 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opennms.core.ipc.rpc</groupId>
-  <artifactId>org.opennms.core.ipc.rpc.camel-impl</artifactId>
-  <name>OpenNMS :: Core :: IPC :: RPC :: Camel Impl.</name>
+  <artifactId>org.opennms.core.ipc.rpc.camel</artifactId>
+  <name>OpenNMS :: Core :: IPC :: RPC :: Camel</name>
   <packaging>bundle</packaging>
   <build>
     <plugins>

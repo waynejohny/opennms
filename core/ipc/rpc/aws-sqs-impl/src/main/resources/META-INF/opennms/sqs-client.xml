@@ -8,7 +8,7 @@
 ">
 
 
-    <bean id="sqsClient" class="org.opennms.core.rpc.camel.SqsClientFactory"/>
-    <bean id="connectionFactory" class="org.opennms.core.rpc.camel.JmsClientFactory"/>
+    <bean id="sqsClient" class="org.opennms.core.rpc.aws.sqs.SqsClientFactory"/>
+    <bean id="connectionFactory" class="org.opennms.core.rpc.aws.sqs.JmsClientFactory"/>
 
 </beans>

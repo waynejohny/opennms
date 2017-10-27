@@ -1,8 +1,8 @@
 /*******************************************************************************
  * This file is part of OpenNMS(R).
  *
- * Copyright (C) 2016 The OpenNMS Group, Inc.
- * OpenNMS(R) is Copyright (C) 1999-2016 The OpenNMS Group, Inc.
+ * Copyright (C) 2017-2017 The OpenNMS Group, Inc.
+ * OpenNMS(R) is Copyright (C) 1999-2017 The OpenNMS Group, Inc.
  *
  * OpenNMS(R) is a registered trademark of The OpenNMS Group, Inc.
  *
@@ -26,11 +26,34 @@
  *     http://www.opennms.com/
  *******************************************************************************/
 
-package org.opennms.core.rpc.camel;
+package org.opennms.core.rpc.aws.sqs;
 
-public interface CamelRpcConstants {
-    static final String JMS_QUEUE_PREFIX = "RPC";
-    static final String JMS_QUEUE_NAME_HEADER = "JmsQueueName";
-    static final String CAMEL_JMS_REQUEST_TIMEOUT_HEADER = "CamelJmsRequestTimeout";
-    static final String JMS_SYSTEM_ID_HEADER = "SystemId";
+import com.amazon.sqs.javamessaging.ProviderConfiguration;
+import com.amazon.sqs.javamessaging.SQSConnectionFactory;
+import com.amazonaws.services.sqs.AmazonSQS;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class JmsClientFactory implements FactoryBean<SQSConnectionFactory> {
+
+    @Autowired
+    private AmazonSQS sqsClient;
+
+    @Override
+    public SQSConnectionFactory getObject() throws Exception {
+        return new SQSConnectionFactory(
+                new ProviderConfiguration(),
+                sqsClient
+        );
+    }
+
+    @Override
+    public Class<?> getObjectType() {
+        return SQSConnectionFactory.class;
+    }
+
+    @Override
+    public boolean isSingleton() {
+        return true;
+    }
 }
