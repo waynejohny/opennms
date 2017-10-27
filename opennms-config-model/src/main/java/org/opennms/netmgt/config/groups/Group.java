@@ -31,40 +31,51 @@ package org.opennms.netmgt.config.groups;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import org.opennms.core.xml.StringTrimAdapter;
 import org.opennms.core.xml.ValidateUsing;
 import org.opennms.netmgt.config.utils.ConfigUtils;
 
 @XmlRootElement(name = "group")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.NONE)
 @ValidateUsing("groups.xsd")
 public class Group implements Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     @XmlElement(name = "name", required = true)
+    @XmlJavaTypeAdapter(StringTrimAdapter.class)
     private String m_name;
 
     @XmlElement(name = "default-map")
+    @XmlJavaTypeAdapter(StringTrimAdapter.class)
     private String m_defaultMap;
 
     @XmlElement(name = "comments")
+    @XmlJavaTypeAdapter(StringTrimAdapter.class)
     private String m_comments;
 
     @XmlElement(name = "user")
     private List<String> m_users = new ArrayList<>();
 
-    @XmlElement(name = "duty-schedule")
     private List<String> m_dutySchedules = new ArrayList<>();
 
     public Group() {
+    }
+
+    public Group(final String name, final String... users) {
+        setName(name);
+        setUsers(Arrays.asList(users));
     }
 
     public String getName() {
@@ -72,7 +83,7 @@ public class Group implements Serializable {
     }
 
     public void setName(final String name) {
-        m_name = ConfigUtils.assertNotEmpty(name, "name");
+        m_name = ConfigUtils.assertNotEmpty(ConfigUtils.normalizeAndTrimString(name), "name");
     }
 
     public Optional<String> getDefaultMap() {
@@ -80,7 +91,7 @@ public class Group implements Serializable {
     }
 
     public void setDefaultMap(final String defaultMap) {
-        m_defaultMap = ConfigUtils.normalizeString(defaultMap);
+        m_defaultMap = ConfigUtils.normalizeAndTrimString(defaultMap);
     }
 
     public Optional<String> getComments() {
@@ -88,7 +99,7 @@ public class Group implements Serializable {
     }
 
     public void setComments(final String comments) {
-        m_comments = ConfigUtils.normalizeString(comments);
+        m_comments = ConfigUtils.normalizeAndTrimString(comments);
     }
 
     public List<String> getUsers() {
@@ -98,11 +109,11 @@ public class Group implements Serializable {
     public void setUsers(final List<String> users) {
         if (users == m_users) return;
         m_users.clear();
-        if (users != null) m_users.addAll(users);
+        if (users != null) m_users.addAll(users.stream().map(ConfigUtils::normalizeAndTrimString).collect(Collectors.toList()));
     }
 
     public void addUser(final String user) {
-        m_users.add(user);
+        m_users.add(ConfigUtils.normalizeAndTrimString(user));
     }
 
     public boolean removeUser(final String user) {
@@ -113,6 +124,7 @@ public class Group implements Serializable {
         m_users.clear();
     }
 
+    @XmlElement(name = "duty-schedule")
     public List<String> getDutySchedules() {
         return m_dutySchedules;
     }
@@ -120,11 +132,11 @@ public class Group implements Serializable {
     public void setDutySchedules(final List<String> dutySchedules) {
         if (dutySchedules == m_dutySchedules) return;
         m_dutySchedules.clear();
-        if (dutySchedules != null) m_dutySchedules.addAll(dutySchedules);
+        if (dutySchedules != null) m_dutySchedules.addAll(dutySchedules.stream().map(ConfigUtils::normalizeAndTrimString).collect(Collectors.toList()));
     }
 
     public void addDutySchedule(final String dutySchedule) {
-        m_dutySchedules.add(dutySchedule);
+        m_dutySchedules.add(ConfigUtils.normalizeAndTrimString(dutySchedule));
     }
 
     public void clearDutySchedules() {
